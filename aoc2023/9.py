@@ -30,7 +30,7 @@ def get_previous_value(sequences):
 	return prev_val
 
 
-with open('./9.txt') as f:
+with open('./input/9.txt') as f:
 	lines = [line.rstrip() for line in f]
 
 total = 0

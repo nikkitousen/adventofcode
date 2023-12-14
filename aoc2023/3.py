@@ -11,7 +11,7 @@ def get_adjacent_gears(lines, i, j):
 				gear_positions.add((ii,jj))
 	return gear_positions
 
-with open('./3.txt') as f:
+with open('./input/3.txt') as f:
 	lines = [line.rstrip() for line in f]
 	gear_map = {}
 	for i in range(len(lines)):

@@ -1,4 +1,4 @@
-with open('./5.txt') as f:
+with open('./input/5.txt') as f:
 	lines = [line.rstrip() for line in f]
 	seed_info = [int(seed) for seed in lines[0][7:].split()]
 	seed_ranges = list()

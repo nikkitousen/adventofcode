@@ -1,4 +1,4 @@
-with open('./2.txt') as f:
+with open('./input/2.txt') as f:
 	lines = [line.rstrip() for line in f]
 	# sum_of_possible_ids = 0
 	sum_of_powers = 0

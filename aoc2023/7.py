@@ -1,4 +1,4 @@
-with open('./7.txt') as f:
+with open('./input/7.txt') as f:
 	lines = [line.rstrip().split() for line in f]
 hands = [(line[0], int(line[1])) for line in lines]
 

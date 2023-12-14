@@ -20,7 +20,7 @@ def find_first_and_last_digits(input_string):
     return first + last
 
 
-with open('./1.in') as f:
+with open('./input/1.txt') as f:
 	lines = [line.rstrip() for line in f]
 	total_sum = 0
 	for line in lines:

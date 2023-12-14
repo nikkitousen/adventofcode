@@ -1,4 +1,4 @@
-with open('./4.txt') as f:
+with open('./input/4.txt') as f:
 	lines = [line.rstrip() for line in f]
 	total = 0
 	copies = [1 for _ in lines]

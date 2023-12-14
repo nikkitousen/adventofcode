@@ -19,7 +19,7 @@ def is_ending_position(nodes):
 	return True
 
 
-with open('./8.txt') as f:
+with open('./input/8.txt') as f:
 	lines = [line.rstrip() for line in f]
 
 instructions = lines[0]

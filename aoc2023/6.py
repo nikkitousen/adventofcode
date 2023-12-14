@@ -1,6 +1,6 @@
 import math
 
-with open('./6.txt') as f:
+with open('./input/6.txt') as f:
 	lines = [line.rstrip() for line in f]
 
 time = int(''.join((lines[0][len('Time:'):]).split()))
