@@ -13,6 +13,9 @@ with open(filepath) as f:
 n = len(grid)
 m = len(grid[0])
 
+min_consecutive_steps = 4
+max_consecutive_steps = 10
+
 def get_neighbours(i, j, direction, consecutive_steps):
 	neighbours = list()
 	can_continue_straight = True
@@ -21,32 +24,32 @@ def get_neighbours(i, j, direction, consecutive_steps):
 		neighbours.append((i, j+1, '>', 1))
 		neighbours.append((i+1, j, 'v', 1))
 	if direction == '>':
-		if i > 0 and consecutive_steps >= 4:
+		if i > 0 and consecutive_steps >= min_consecutive_steps:
 			neighbours.append((i-1, j, '^', 1))
-		if i < n-1 and consecutive_steps >= 4:
+		if i < n-1 and consecutive_steps >= min_consecutive_steps:
 			neighbours.append((i+1, j, 'v', 1))
-		if j < m-1 and consecutive_steps < 10:
+		if j < m-1 and consecutive_steps < max_consecutive_steps:
 			neighbours.append((i, j+1, '>', consecutive_steps+1))
 	if direction == 'v':
-		if j > 0 and consecutive_steps >= 4:
+		if j > 0 and consecutive_steps >= min_consecutive_steps:
 			neighbours.append((i, j-1, '<', 1))
-		if j < m-1 and consecutive_steps >= 4:
+		if j < m-1 and consecutive_steps >= min_consecutive_steps:
 			neighbours.append((i, j+1, '>', 1))
-		if i < n-1 and consecutive_steps < 10:
+		if i < n-1 and consecutive_steps < max_consecutive_steps:
 			neighbours.append((i+1, j, 'v', consecutive_steps+1))
 	if direction == '<':
-		if i > 0 and consecutive_steps >= 4:
+		if i > 0 and consecutive_steps >= min_consecutive_steps:
 			neighbours.append((i-1, j, '^', 1))
-		if i < n-1 and consecutive_steps >= 4:
+		if i < n-1 and consecutive_steps >= min_consecutive_steps:
 			neighbours.append((i+1, j, 'v', 1))
-		if j > 0 and consecutive_steps < 10:
+		if j > 0 and consecutive_steps < max_consecutive_steps:
 			neighbours.append((i, j-1, '<', consecutive_steps+1))
 	if direction == '^':
-		if j > 0 and consecutive_steps >= 4:
+		if j > 0 and consecutive_steps >= min_consecutive_steps:
 			neighbours.append((i, j-1, '<', 1))
-		if j < m-1 and consecutive_steps >= 4:
+		if j < m-1 and consecutive_steps >= min_consecutive_steps:
 			neighbours.append((i, j+1, '>', 1))
-		if i > 0 and consecutive_steps < 10:
+		if i > 0 and consecutive_steps < max_consecutive_steps:
 			neighbours.append((i-1, j, '^', consecutive_steps+1))
 	return neighbours
 
