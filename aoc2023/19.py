@@ -75,7 +75,6 @@ def calc_combinations(bounds, wf_name):
             updated_bounds[category][1] = value
         combinations += calc_combinations(new_bounds, next_wf)
         
-        
     return combinations
 
 print(calc_combinations(bounds, 'in'))
